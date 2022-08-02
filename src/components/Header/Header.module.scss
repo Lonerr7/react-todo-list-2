@@ -6,9 +6,10 @@
   background-color: var(--header-bg);
   color: var(--text-color);
 
-  &__inner {
+  &__top {
     display: flex;
     align-items: center;
+    margin-bottom: 15px;
   }
 
   &__title {
