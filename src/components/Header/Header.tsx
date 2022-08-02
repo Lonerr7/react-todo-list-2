@@ -1,5 +1,6 @@
 import s from './Header.module.scss';
 import { FcTodoList } from 'react-icons/fc';
+import ThemeSwitcher from './ThemeSwitcher/ThemeSwitcher';
 
 const Header: React.FC = () => {
   return (
@@ -9,6 +10,7 @@ const Header: React.FC = () => {
           <FcTodoList className={s.header__icon} size={36} />
           Todo-List
         </p>
+        <ThemeSwitcher />
       </div>
     </div>
   );

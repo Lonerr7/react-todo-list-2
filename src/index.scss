@@ -14,9 +14,10 @@ code {
 
 body[data-theme='light'] {
   --header-bg: #c4c4c4;
+  --text-color: #000;
 }
 
 body[data-theme='dark'] {
   --header-bg: #0d0d0d;
-  --text-color: #fff;
+  --text-color: #f2f2f2;
 }
