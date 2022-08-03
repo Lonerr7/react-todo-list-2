@@ -10,6 +10,7 @@
     padding: 16px;
     font-size: 18px;
     border-radius: 8px;
+    transition: all 0.2s;
 
     &:focus {
       outline: 1px solid var(--text-color);
@@ -24,7 +25,7 @@
     font-weight: 500;
     font-size: 16px;
     background-color: var(--btn-bg);
-    transition: all 0.3s;
+    transition: all 0.2s;
 
     &:hover {
       opacity: 0.8;
