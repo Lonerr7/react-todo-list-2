@@ -45,8 +45,13 @@
     line-height: 22px;
     cursor: pointer;
   }
+
+  &__deleteBtn:hover {
+    color: red;
+  }
 }
 
 .completed {
   text-decoration: line-through;
+  text-decoration-color: var(--text-color);
 }

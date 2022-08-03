@@ -1,5 +1,5 @@
-import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
-import { toggleIsCompleted } from '../../../redux/todoSlice';
+import { useAppDispatch } from '../../../hooks/hooks';
+import { toggleIsCompleted, deleteTodo } from '../../../redux/todoSlice';
 import Task from './Task';
 
 type TaskProps = {
@@ -15,7 +15,17 @@ const TaskContainer: React.FC<TaskProps> = (props) => {
     dispatch(toggleIsCompleted(id));
   };
 
-  return <Task {...props} onTaskComplete={taskCompleteHanlder} />;
+  const taskDeleteHandler = (id: string) => {
+    dispatch(deleteTodo(id));
+  };
+
+  return (
+    <Task
+      {...props}
+      onTaskComplete={taskCompleteHanlder}
+      onTaskDelete={taskDeleteHandler}
+    />
+  );
 };
 
 export default TaskContainer;

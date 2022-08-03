@@ -8,6 +8,7 @@ type TaskProps = {
   isCompleted: boolean;
   id: string;
   onTaskComplete: (id: string) => void;
+  onTaskDelete: (id: string) => void;
 };
 
 const Task: React.FC<TaskProps> = ({
@@ -15,6 +16,7 @@ const Task: React.FC<TaskProps> = ({
   task,
   id,
   onTaskComplete,
+  onTaskDelete
 }) => {
   return (
     <li className={s.task}>
@@ -38,7 +40,7 @@ const Task: React.FC<TaskProps> = ({
         <button className={`${s.task__btn} ${s.task__editBtn}`}>
           <AiFillEdit size={24} />
         </button>
-        <button className={`${s.task__btn} ${s.task__deleteBtn}`}>
+        <button className={`${s.task__btn} ${s.task__deleteBtn}`} onClick={() => onTaskDelete(id)}>
           <MdDeleteForever size={24} />
         </button>
       </div>

@@ -8,7 +8,7 @@ import Tasks from './components/Main/Tasks/Tasks';
 
 const App = () => {
   return (
-    <div className="App">
+    <>
       <Header />
       <Main>
         <Container>
@@ -17,7 +17,7 @@ const App = () => {
           <Tasks />
         </Container>
       </Main>
-    </div>
+    </>
   );
 };
 
