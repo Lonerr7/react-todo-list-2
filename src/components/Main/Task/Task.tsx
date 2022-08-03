@@ -6,22 +6,33 @@ import { MdDeleteForever } from 'react-icons/md';
 type TaskProps = {
   task: string;
   isCompleted: boolean;
+  id: string;
+  onTaskComplete: (id: string) => void;
 };
 
-const Task: React.FC<TaskProps> = ({ isCompleted, task }) => {
+const Task: React.FC<TaskProps> = ({
+  isCompleted,
+  task,
+  id,
+  onTaskComplete,
+}) => {
   return (
     <li className={s.task}>
       <div className={s.task__row}>
-        {isCompleted ? (
-          <button className={`${s.task__btn} ${s.task__completedBtn}`}>
-            <BsToggleOn size={24} />
-          </button>
-        ) : (
-          <button className={`${s.task__btn} ${s.task__completedBtn}`}>
-            <BsToggleOff size={24} />
-          </button>
-        )}
-        <p className={s.task__info}>{task}</p>
+        <button
+          className={`${s.task__btn} ${s.task__completedBtn}`}
+          onClick={() => onTaskComplete(id)}
+        >
+          {isCompleted ? <BsToggleOn size={24} /> : <BsToggleOff size={24} />}
+        </button>
+        <p
+          className={
+            isCompleted ? `${s.task__info} ${s.completed}` : s.task__info
+          }
+          onClick={() => onTaskComplete(id)}
+        >
+          {task}
+        </p>
       </div>
       <div className={s.task__btns}>
         <button className={`${s.task__btn} ${s.task__editBtn}`}>

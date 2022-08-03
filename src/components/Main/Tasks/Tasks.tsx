@@ -1,12 +1,17 @@
 import { useAppSelector } from '../../../hooks/hooks';
-import Task from '../Task/Task';
+import TaskContainer from '../Task/TaskContainer';
 import s from './Tasks.module.scss';
 
 const Tasks: React.FC = () => {
   const tasks = useAppSelector((state) => state.todos.todos);
 
   const tasksElems = tasks.map((task) => (
-    <Task key={task.id} isCompleted={task.isCompleted} task={task.task} />
+    <TaskContainer
+      key={task.id}
+      isCompleted={task.isCompleted}
+      task={task.task}
+      id={task.id}
+    />
   ));
 
   return <ul className={s.tasks}>{tasksElems}</ul>;
