@@ -9,6 +9,7 @@ const TaskInput: React.FC = () => {
 
   const addTaskHandler = (e: React.FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    if (!taskText || /^\s*$/.test(taskText)) return;
     dispatch(addTodo(taskText));
     setTaskText('');
   };
