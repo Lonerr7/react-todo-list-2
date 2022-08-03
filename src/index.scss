@@ -15,9 +15,15 @@ code {
 body[data-theme='light'] {
   --header-bg: #c4c4c4;
   --text-color: #000;
+  --main-bg: #c4c4c47b;
+  --input-bg: #d8d8d8;
+  --btn-bg: #bdbdbd;
 }
 
 body[data-theme='dark'] {
   --header-bg: #0d0d0d;
   --text-color: #f2f2f2;
+  --main-bg: #1a1a1a;
+  --input-bg: #262626;
+  --btn-bg: #ffffff;
 }

@@ -1,0 +1,33 @@
+.taskInput {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__input {
+    width: 80%;
+    color: var(--text-color);
+    background-color: var(--input-bg);
+    padding: 16px;
+    font-size: 18px;
+    border-radius: 8px;
+
+    &:focus {
+      outline: 1px solid var(--text-color);
+    }
+  }
+
+  &__btn {
+    width: 17%;
+    height: 53px;
+    display: inline-block;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 16px;
+    background-color: var(--btn-bg);
+    transition: all 0.3s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

@@ -1,30 +1,20 @@
 import s from './Header.module.scss';
-import { RiTodoFill, RiTodoLine } from 'react-icons/ri';
+
 import ThemeSwitcher from './ThemeSwitcher/ThemeSwitcher';
 import Counter from './Counter/Counter';
-import { useAppSelector } from '../../hooks/hooks';
-import { Themes } from '../../types/types';
+import HeaderTitle from './HeaderTitle/HeaderTitle';
 
 const Header: React.FC = () => {
-  const theme = useAppSelector((state) => state.theme.currentTheme);
-
   return (
-    <div className={s.header}>
+    <header className={s.header}>
       <div className={s.header__inner}>
         <div className={s.header__top}>
-          <p className={s.header__title}>
-            {theme === Themes.LIGHT ? (
-              <RiTodoFill className={s.header__icon} size={36} />
-            ) : (
-              <RiTodoLine className={s.header__icon} size={36} />
-            )}
-            Todo-List
-          </p>
+          <HeaderTitle>Todo-List</HeaderTitle>
           <ThemeSwitcher />
         </div>
         <Counter />
       </div>
-    </div>
+    </header>
   );
 };
 

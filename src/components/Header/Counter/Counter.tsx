@@ -1,7 +1,7 @@
 import { useAppSelector } from '../../../hooks/hooks';
 import s from './Counter.module.scss';
 
-const Counter = () => {
+const Counter: React.FC = () => {
   const tasksCount = useAppSelector((state) => state.todos.todos).length;
 
   return (

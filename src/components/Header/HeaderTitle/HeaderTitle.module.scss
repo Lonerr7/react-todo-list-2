@@ -1,0 +1,11 @@
+.headerTitle {
+  display: flex;
+  align-items: center;
+  font-size: 36px;
+  font-weight: 500;
+  margin-right: 30px;
+
+  &__icon {
+    margin: 5px 15px 0 0;
+  }
+}
