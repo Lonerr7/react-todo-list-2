@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative;
 }
 
 code {
@@ -19,6 +20,7 @@ body[data-theme='light'] {
   --input-bg: #d8d8d8;
   --btn-bg: #bdbdbd;
   --task-bg: #9595957b;
+  --popup-bg: #aeaeae7b;
 }
 
 body[data-theme='dark'] {
@@ -28,4 +30,5 @@ body[data-theme='dark'] {
   --input-bg: #262626;
   --btn-bg: #ffffff;
   --task-bg: #333333;
+  --popup-bg: #262626;
 }

@@ -1,0 +1,63 @@
+.deletePopup {
+  position: absolute;
+  padding: 5px;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 300px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  background-color: var(--popup-bg);
+
+  &__close {
+    align-self: flex-end;
+    color: var(--text-color);
+    margin-bottom: 75px;
+    transition: color 0.3s;
+
+    &:hover {
+      color: red;
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  &__btns {
+    justify-self: center;
+  }
+
+  &__yes,
+  &__no {
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 20px;
+    transition: color 0.3s;
+  }
+
+  &__yes {
+    margin-right: 60px;
+
+    &:hover {
+      color: red;
+    }
+  }
+
+  &__no {
+    &:hover {
+      color: green;
+    }
+  }
+}

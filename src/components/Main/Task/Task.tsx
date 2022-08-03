@@ -16,7 +16,7 @@ const Task: React.FC<TaskProps> = ({
   task,
   id,
   onTaskComplete,
-  onTaskDelete
+  onTaskDelete,
 }) => {
   return (
     <li className={s.task}>
@@ -40,7 +40,10 @@ const Task: React.FC<TaskProps> = ({
         <button className={`${s.task__btn} ${s.task__editBtn}`}>
           <AiFillEdit size={24} />
         </button>
-        <button className={`${s.task__btn} ${s.task__deleteBtn}`} onClick={() => onTaskDelete(id)}>
+        <button
+          className={`${s.task__btn} ${s.task__deleteBtn}`}
+          onClick={() => onTaskDelete(id)}
+        >
           <MdDeleteForever size={24} />
         </button>
       </div>

@@ -24,4 +24,13 @@
       opacity: 0.6;
     }
   }
+
+  &__delete {
+    transition: color 0.3s;
+
+    &:hover {
+      opacity: 1;
+      color: red;
+    }
+  }
 }
