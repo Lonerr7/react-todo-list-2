@@ -1,11 +1,14 @@
-import { useAppDispatch } from '../../../hooks/hooks';
+import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
 import { changePopupOpen } from '../../../redux/popupSlice';
 import s from './Controls.module.scss';
 
 const Controls: React.FC = () => {
+  const tasksCount = useAppSelector((state) => state.todos.todos).length;
+
   const dispatch = useAppDispatch();
 
   const popupOpenHandler = () => {
+    if (!tasksCount) return;
     dispatch(changePopupOpen());
   };
 

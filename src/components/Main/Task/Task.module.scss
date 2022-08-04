@@ -7,21 +7,11 @@
   margin-bottom: 12px;
   border-radius: 8px;
 
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  &__row {
-    display: flex;
-    align-items: center;
-    max-width: 85%;
-  }
-
   &__btn {
     background-color: transparent;
     display: inline-block;
     margin-right: 10px;
-    color: var(--text-colo);
+    color: var(--text-color);
     transition: all 0.3s;
 
     &:hover {
@@ -33,17 +23,8 @@
     }
   }
 
-  &__completedBtn {
-    margin-top: 3px;
-    margin-right: 15px;
-  }
-
-  &__info {
-    font-weight: 500;
-    font-size: 18px;
-    width: 100%;
-    line-height: 22px;
-    cursor: pointer;
+  &:last-child {
+    margin-bottom: 0;
   }
 
   &__deleteBtn:hover {
@@ -51,7 +32,3 @@
   }
 }
 
-.completed {
-  text-decoration: line-through;
-  text-decoration-color: var(--text-color);
-}

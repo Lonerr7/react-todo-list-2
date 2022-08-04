@@ -3,14 +3,7 @@ import { nanoid } from 'nanoid';
 import { TodoState } from '../types/types';
 
 const initialState = {
-  todos: [
-    {
-      id: '31232',
-      task: 'Wash the dishes Wash the dishes Wash the dishes Wash the dishes Wash the dishes ',
-      isCompleted: false,
-    },
-    { id: '31312332', task: 'Make the bed', isCompleted: false },
-  ],
+  todos: [],
 } as TodoState;
 
 const todoSlice = createSlice({
@@ -33,6 +26,18 @@ const todoSlice = createSlice({
         return todo;
       });
     },
+    changeTaskText(
+      state,
+      action: PayloadAction<{ id: string; newText: string }>
+    ) {
+      state.todos = state.todos.map((todo) => {
+        if (todo.id === action.payload.id) {
+          todo.task = action.payload.newText;
+          return todo;
+        }
+        return todo;
+      });
+    },
     deleteTodo(state, action: PayloadAction<string>) {
       state.todos = state.todos.filter((todo) => todo.id !== action.payload);
     },
@@ -42,6 +47,11 @@ const todoSlice = createSlice({
   },
 });
 
-export const { addTodo, toggleIsCompleted, deleteTodo, deleteAllTodos } =
-  todoSlice.actions;
+export const {
+  addTodo,
+  toggleIsCompleted,
+  changeTaskText,
+  deleteTodo,
+  deleteAllTodos,
+} = todoSlice.actions;
 export default todoSlice.reducer;

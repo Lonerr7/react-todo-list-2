@@ -21,6 +21,7 @@ body[data-theme='light'] {
   --btn-bg: #bdbdbd;
   --task-bg: #9595957b;
   --popup-bg: #aeaeae7b;
+  --taskInput-bg: rgb(163, 163, 163);
 }
 
 body[data-theme='dark'] {
@@ -31,4 +32,5 @@ body[data-theme='dark'] {
   --btn-bg: #ffffff;
   --task-bg: #333333;
   --popup-bg: #262626;
+  --taskInput-bg: #434343;
 }
