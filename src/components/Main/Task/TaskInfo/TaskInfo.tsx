@@ -33,6 +33,7 @@ const TaskInfo: React.FC<TaskInfoProps> = ({
 
   const onNewTaskTextSubmit = (e: React.FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    if (!editTaskText) return;
     dispatch(changeTaskText({ id, newText: editTaskText }));
     setEditMode();
   };

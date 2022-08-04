@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  isPopupOpen: false,
+  isDeletePopupOpen: false,
+  isErrorPopupOpen: false,
 };
 
 const popupSlice = createSlice({
@@ -9,10 +10,17 @@ const popupSlice = createSlice({
   initialState,
   reducers: {
     changePopupOpen(state) {
-      state.isPopupOpen = !state.isPopupOpen;
+      state.isDeletePopupOpen = !state.isDeletePopupOpen;
+    },
+    openErrorPopup(state) {
+      state.isErrorPopupOpen = true;
+    },
+    closeErrorPopup(state) {
+      state.isErrorPopupOpen = false;
     },
   },
 });
 
-export const { changePopupOpen } = popupSlice.actions;
+export const { changePopupOpen, openErrorPopup, closeErrorPopup } =
+  popupSlice.actions;
 export default popupSlice.reducer;

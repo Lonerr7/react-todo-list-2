@@ -1,4 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
+import errorSlice from './errorSlice';
 import filtersSlice from './filtersSlice';
 import popupSlice from './popupSlice';
 import themeSlice from './themeSlice';
@@ -10,6 +11,7 @@ const store = configureStore({
     todos: todoSlice,
     popup: popupSlice,
     filters: filtersSlice,
+    error: errorSlice,
   },
 });
 

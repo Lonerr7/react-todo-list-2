@@ -1,19 +1,16 @@
-import React, { useState } from 'react';
-import { useAppDispatch } from '../../../hooks/hooks';
-import { addTodo } from '../../../redux/todoSlice';
 import s from './TaskInput.module.scss';
 
-const TaskInput: React.FC = () => {
-  const [taskText, setTaskText] = useState('');
-  const dispatch = useAppDispatch();
+type TaskInputProps = {
+  taskText: string;
+  setTaskText: React.Dispatch<React.SetStateAction<string>>;
+  addTaskHandler: (e: React.FormEvent<HTMLButtonElement>) => void;
+};
 
-  const addTaskHandler = (e: React.FormEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    if (!taskText || /^\s*$/.test(taskText)) return;
-    dispatch(addTodo(taskText));
-    setTaskText('');
-  };
-
+const TaskInput: React.FC<TaskInputProps> = ({
+  addTaskHandler,
+  setTaskText,
+  taskText,
+}) => {
   return (
     <form className={s.taskInput}>
       <input
