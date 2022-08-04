@@ -13,7 +13,7 @@ const todoSlice = createSlice({
     addTodo(state, action: PayloadAction<string>) {
       state.todos.push({
         id: nanoid(12),
-        task: action.payload,
+        task: action.payload.trim(),
         isCompleted: false,
       });
     },

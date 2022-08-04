@@ -1,9 +1,8 @@
 import TaskInput from './TaskInput';
 import React, { useState } from 'react';
 import { useAppDispatch } from '../../../hooks/hooks';
-import { setErrorMessage } from '../../../redux/errorSlice';
 import { addTodo } from '../../../redux/todoSlice';
-import { openErrorPopup } from '../../../redux/popupSlice';
+import { setErrorMessageShowPopup } from '../../../helpers/helpers';
 
 const TaskInputContainer: React.FC = () => {
   const [taskText, setTaskText] = useState('');
@@ -16,13 +15,13 @@ const TaskInputContainer: React.FC = () => {
       if (!taskText) throw new Error('Please enter your task');
       if (/^\s*$/.test(taskText)) throw new Error('Please enter a valid task');
 
-      dispatch(addTodo(taskText.trim()));
+      dispatch(addTodo(taskText));
       setTaskText('');
     } catch (err: any) {
-      dispatch(setErrorMessage(err.message));
-      dispatch(openErrorPopup());
+      setErrorMessageShowPopup(dispatch, err.message);
     }
   };
+
   return (
     <TaskInput
       addTaskHandler={addTaskHandler}

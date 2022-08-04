@@ -1,5 +1,6 @@
 import { BsToggleOff, BsToggleOn } from 'react-icons/bs';
 import { MdOutlineDoneOutline } from 'react-icons/md';
+import { setErrorMessageShowPopup } from '../../../../helpers/helpers';
 import { useAppDispatch } from '../../../../hooks/hooks';
 import { changeTaskText } from '../../../../redux/todoSlice';
 import s from './TaskInfo.module.scss';
@@ -32,10 +33,19 @@ const TaskInfo: React.FC<TaskInfoProps> = ({
   };
 
   const onNewTaskTextSubmit = (e: React.FormEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    if (!editTaskText) return;
-    dispatch(changeTaskText({ id, newText: editTaskText }));
-    setEditMode();
+    try {
+      e.preventDefault();
+
+      if (!editTaskText) throw new Error('Please enter your task');
+      if (/^\s*$/.test(editTaskText)) {
+        throw new Error('Please enter a valid task');
+      }
+
+      dispatch(changeTaskText({ id, newText: editTaskText.trim() }));
+      setEditMode();
+    } catch (err: any) {
+      setErrorMessageShowPopup(dispatch, err.message);
+    }
   };
 
   return (
