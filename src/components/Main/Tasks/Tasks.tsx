@@ -1,9 +1,10 @@
 import { useAppSelector } from '../../../hooks/hooks';
+import { selectTodosByFilter } from '../../../redux/selectors';
 import TaskContainer from '../Task/TaskContainer';
 import s from './Tasks.module.scss';
 
 const Tasks: React.FC = () => {
-  const tasks = useAppSelector((state) => state.todos.todos);
+  const tasks = useAppSelector(selectTodosByFilter);
 
   const tasksElems = tasks.map((task) => (
     <TaskContainer

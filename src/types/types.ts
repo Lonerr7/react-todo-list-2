@@ -3,6 +3,12 @@ export enum Themes {
   DARK = 'dark',
 }
 
+export enum Filters {
+  ALL = 'all',
+  COMPLETED = 'completed',
+  UNCOMPLETED = 'uncompleted',
+}
+
 type Todo = {
   id: string;
   task: string;
