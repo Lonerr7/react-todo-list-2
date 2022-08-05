@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import './App.scss';
 import Container from './components/common/Container/Container';
 import ErrorPopups from './components/common/ErrorPopup/ErrorPopups';
@@ -11,9 +12,12 @@ import { useAppSelector } from './hooks/hooks';
 
 const App = () => {
   const { isDeletePopupOpen } = useAppSelector((state) => state.popup);
-  // const isErrorPopupOpen = useAppSelector(
-  //   (state) => state.error.isErrorPopupOpen
-  // );
+  const theme = useAppSelector((state) => state.theme.currentTheme);
+
+  useEffect(() => {
+    document.body.setAttribute('data-theme', theme);
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <>
