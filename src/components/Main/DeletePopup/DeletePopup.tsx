@@ -3,6 +3,7 @@ import { IoCloseCircle } from 'react-icons/io5';
 import { useAppDispatch } from '../../../hooks/hooks';
 import { changePopupOpen } from '../../../redux/popupSlice';
 import { deleteAllTodos } from '../../../redux/todoSlice';
+import Container from '../../common/Container/Container';
 
 const DeletePopup: React.FC = () => {
   const dispatch = useAppDispatch();

@@ -6,10 +6,10 @@
   width: 600px;
   height: 300px;
   transform: translate(-50%, -50%);
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 8px;
   background-color: var(--popup-bg);
 
   &__close {
@@ -33,6 +33,8 @@
     font-size: 24px;
     font-weight: 500;
     margin-bottom: 20px;
+    padding: 0 15px;
+    text-align: center;
   }
 
   &__btns {
@@ -59,5 +61,11 @@
     &:hover {
       color: green;
     }
+  }
+}
+
+@media(max-width: 630px) {
+  .deletePopup {
+    width: 100%;
   }
 }
