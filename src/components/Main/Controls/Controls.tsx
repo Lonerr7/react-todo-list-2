@@ -1,5 +1,5 @@
-import { setErrorMessageShowPopup } from '../../../helpers/helpers';
 import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
+import { setErrorMessage } from '../../../redux/errorSlice';
 import { changeFilter } from '../../../redux/filtersSlice';
 import { changePopupOpen } from '../../../redux/popupSlice';
 import { Filters } from '../../../types/types';
@@ -14,7 +14,7 @@ const Controls: React.FC = () => {
       if (!tasksCount) throw new Error('Nothing to delete');
       dispatch(changePopupOpen());
     } catch (err: any) {
-      setErrorMessageShowPopup(dispatch, err.message);
+      dispatch(setErrorMessage(err.message));
     }
   };
 

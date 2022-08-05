@@ -1,6 +1,6 @@
 import './App.scss';
 import Container from './components/common/Container/Container';
-import ErrorPopup from './components/common/ErrorPopup/ErrorPopup';
+import ErrorPopups from './components/common/ErrorPopup/ErrorPopups';
 import Header from './components/Header/Header';
 import Controls from './components/Main/Controls/Controls';
 import DeletePopup from './components/Main/DeletePopup/DeletePopup';
@@ -10,9 +10,10 @@ import Tasks from './components/Main/Tasks/Tasks';
 import { useAppSelector } from './hooks/hooks';
 
 const App = () => {
-  const { isDeletePopupOpen, isErrorPopupOpen } = useAppSelector(
-    (state) => state.popup
-  );
+  const { isDeletePopupOpen } = useAppSelector((state) => state.popup);
+  // const isErrorPopupOpen = useAppSelector(
+  //   (state) => state.error.isErrorPopupOpen
+  // );
 
   return (
     <>
@@ -28,7 +29,8 @@ const App = () => {
               <Tasks />
             </>
           )}
-          {isErrorPopupOpen ? <ErrorPopup /> : <></>}
+          {/* {isErrorPopupOpen ? <ErrorPopups /> : <></>} */}
+          <ErrorPopups />
         </Container>
       </Main>
     </>

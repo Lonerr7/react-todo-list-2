@@ -1,7 +1,7 @@
 import { BsToggleOff, BsToggleOn } from 'react-icons/bs';
 import { MdOutlineDoneOutline } from 'react-icons/md';
-import { setErrorMessageShowPopup } from '../../../../helpers/helpers';
 import { useAppDispatch } from '../../../../hooks/hooks';
+import { setErrorMessage } from '../../../../redux/errorSlice';
 import { changeTaskText } from '../../../../redux/todoSlice';
 import s from './TaskInfo.module.scss';
 
@@ -44,7 +44,7 @@ const TaskInfo: React.FC<TaskInfoProps> = ({
       dispatch(changeTaskText({ id, newText: editTaskText.trim() }));
       setEditMode();
     } catch (err: any) {
-      setErrorMessageShowPopup(dispatch, err.message);
+      dispatch(setErrorMessage(err.message));
     }
   };
 

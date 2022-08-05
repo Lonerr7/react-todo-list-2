@@ -1,13 +1,16 @@
 .errorPopup {
-  position: absolute;
-  bottom: 50px;
-  right: 50px;
+  position: relative;
   width: 250px;
   height: 80px;
   border-radius: 8px;
   display: flex;
   background-color: var(--input-bg);
   transition: background-color 0.3s;
+  margin-top: 20px;
+
+  &:first-child {
+    margin-top: 0;
+  }
 
   &__btnClose {
     position: absolute;

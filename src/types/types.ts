@@ -18,3 +18,13 @@ type Todo = {
 export type TodoState = {
   todos: Array<Todo>;
 };
+
+type AppError = {
+  errMessage: string;
+  id: string;
+};
+
+export type ErrorSliceState = {
+  // isErrorPopupOpen: boolean;
+  errors: Array<AppError>;
+};

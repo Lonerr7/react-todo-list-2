@@ -2,7 +2,7 @@ import TaskInput from './TaskInput';
 import React, { useState } from 'react';
 import { useAppDispatch } from '../../../hooks/hooks';
 import { addTodo } from '../../../redux/todoSlice';
-import { setErrorMessageShowPopup } from '../../../helpers/helpers';
+import { setErrorMessage } from '../../../redux/errorSlice';
 
 const TaskInputContainer: React.FC = () => {
   const [taskText, setTaskText] = useState('');
@@ -18,7 +18,7 @@ const TaskInputContainer: React.FC = () => {
       dispatch(addTodo(taskText));
       setTaskText('');
     } catch (err: any) {
-      setErrorMessageShowPopup(dispatch, err.message);
+      dispatch(setErrorMessage(err.message));
     }
   };
 
